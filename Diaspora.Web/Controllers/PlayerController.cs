@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Diaspora.Web.Controllers
@@ -27,6 +28,20 @@ namespace Diaspora.Web.Controllers
             this._logger = logger;
             this._userManager = userManager;
             this._playerServices = playerService;
+        }
+
+        public IActionResult Index()
+        {
+            var userid = this._userManager.GetUserId(this.User);
+
+            var player = _playerServices.GetPlayer(userid);
+
+            if (player == null)
+            {
+                return RedirectToAction("Create");
+            }
+
+            return this.View(player);
         }
 
         public IActionResult Create()
@@ -55,17 +70,27 @@ namespace Diaspora.Web.Controllers
             {
                 return this.View();
             }
-           
+
             var userid = this._userManager.GetUserId(this.User);
 
+            //ADD Default configuration
             var player = this.mapper.Map<Player>(model);
             player.AplicationUserId = userid;
+            player.NodeId = "1001";
+            player.Money = 1000;
+            player.PlanPlayers.Add(new PlanPlayer() { PlanId = 1 });
+            player.PlayerShips.Add(new PlayerShip() { ShipId = 1 });
 
             _playerServices.Add(player);
 
             return this.View("Index", player);
         }
 
-       
+        [HttpPost]
+        public JsonResult IsAlreadySigned(string PlayerName)
+        {
+            return Json(_playerServices.CheckNameIsAvailable(PlayerName));
+        }
     }
 }
+

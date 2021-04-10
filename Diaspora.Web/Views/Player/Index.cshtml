@@ -5,45 +5,80 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
-
 <div>
     <h4>Player</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AplicationUserId)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AplicationUserId)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.PlayerName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PlayerName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Money)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Money)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Experience)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Experience)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Node)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Node.NodeId)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Node.NodeId)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NodeId)
         </dd>
     </dl>
 </div>
+<br />
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-info" asp-action="Hangar">Hangar</a>
 </div>
+
+<div>
+    <h4>Hangar</h4>
+    <hr />
+    <form method="post">
+        <select name="Plans">
+            <option value="value"></option>
+        </select>
+        <select name="Ships">
+            <option value="value">text</option>
+        </select>
+    </form>
+</div>
+<br />
+<div>
+    <h4>Market</h4>
+    <hr />
+    <table>
+        <tr>
+            <td>
+                Plans
+                <select>
+                    <option value="value">text</option>
+                </select>
+            </td>
+            <td>
+                Ships
+                <select>
+                    <option value="value">text</option>
+                </select>
+            </td>
+
+        </tr>
+    </table>
+</div>
+
+

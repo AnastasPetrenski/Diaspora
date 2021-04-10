@@ -1,23 +1,30 @@
 [
     {
-        "Name": "Zephyr"
+        "Name": "Zephyr",
+        "Image": ""
     },
     {
-        "Name": "Arachne"
+        "Name": "Arachne",
+        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Arachne.jpg"
     },
     {
-        "Name": "Nisus"
+        "Name": "Nisus",
+        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Nisus.jpg"
     },
     {
-        "Name": "Helios"
+        "Name": "Helios",
+        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Helios.jpg"
     },
     {
-        "Name": "Talos"
+        "Name": "Talos",
+        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Talos.jpg"
     },
     {
-        "Name": "Nereid"
+        "Name": "Nereid",
+        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Nereid.jpg"
     },
     {
-        "Name": "Endymion"
+        "Name": "Endymion",
+        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Endymion.jpg"
     }
 ]

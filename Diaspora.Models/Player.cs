@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Diaspora.Models
 {
@@ -25,6 +27,8 @@ namespace Diaspora.Models
         [ForeignKey("NodeId")]
         public string NodeId { get; set; }
         public virtual Node Node { get; set; }
+
+        public virtual PlayerShip Current => this.PlayerShips.FirstOrDefault();
 
         public virtual ICollection<PlayerShip> PlayerShips { get; set; }
 

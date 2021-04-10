@@ -42,253 +42,253 @@ namespace Diaspora.ConcoleApp
 
             using var context = serviceProvider.GetService<ApplicationDbContext>();
 
-            //ResetDatabase(context, shouldDropDatabase: false);
-            //var players = new List<Player>();
-            //Player player = new Player();
+            ResetDatabase(context, shouldDropDatabase: true);
+            var players = new List<Player>();
+            Player player = new Player();
 
-            //foreach (var user in context.Users)
-            //{
-            //    player = context.Players.FirstOrDefault(x => x.AplicationUserId == user.Id);//.GetAwaiter().GetResult();
+            foreach (var user in context.Users)
+            {
+                player = context.Players.FirstOrDefault(x => x.AplicationUserId == user.Id);//.GetAwaiter().GetResult();
 
-            //    if (player is null)
-            //    {
-            //        var addNewPlayer = new Player()
-            //        {
-            //            AplicationUserId = user.Id,
-            //            PlayerName = user.UserName.Substring(0, user.UserName.IndexOf('@')),
-            //            Money = 1000,
-            //            Experience = 0
-            //        };
+                if (player is null)
+                {
+                    var addNewPlayer = new Player()
+                    {
+                        AplicationUserId = user.Id,
+                        PlayerName = user.UserName.Substring(0, user.UserName.IndexOf('@')),
+                        Money = 1000,
+                        Experience = 0
+                    };
 
-            //        players.Add(addNewPlayer);
-            //    }
-            //}
+                    players.Add(addNewPlayer);
+                }
+            }
 
-            //context.AddRange(players);
-            //context.SaveChanges();
+            context.AddRange(players);
+            context.SaveChanges();
 
-            //if (!context.Plans.Any())
-            //{
+            if (!context.Plans.Any())
+            {
 
-            //    var plans = new List<Plan>();
-            //    var jsonString = File.ReadAllText("plans.json");
+                var plans = new List<Plan>();
+                var jsonString = File.ReadAllText("plans.json");
 
-            //    var result = JsonConvert.DeserializeObject<Plan[]>(jsonString);
+                var result = JsonConvert.DeserializeObject<Plan[]>(jsonString);
 
-            //    foreach (var plan in result)
-            //    {
-            //        plans.Add(plan);
-            //    }
+                foreach (var plan in result)
+                {
+                    plans.Add(plan);
+                }
 
-            //    context.AddRange(plans);
-            //    context.SaveChanges();
-            //}
+                context.AddRange(plans);
+                context.SaveChanges();
+            }
 
 
 
-            //if (!context.Models.Any())
-            //{
+            if (!context.Models.Any())
+            {
 
-            //    var models = new List<Model>();
-            //    var jsonString = File.ReadAllText("models.json");
+                var models = new List<Model>();
+                var jsonString = File.ReadAllText("models.json");
 
-            //    var result = JsonConvert.DeserializeObject<Model[]>(jsonString);
+                var result = JsonConvert.DeserializeObject<Model[]>(jsonString);
 
-            //    foreach (var model in result)
-            //    {
-            //        models.Add(model);
-            //    }
+                foreach (var model in result)
+                {
+                    models.Add(model);
+                }
 
-            //    context.AddRange(models);
-            //    context.SaveChanges();
-            //}
+                context.AddRange(models);
+                context.SaveChanges();
+            }
 
-            //if (!context.PlanModels.Any())
-            //{
-            //    var planModels = new List<PlanModel>();
-            //    var jsonString = File.ReadAllText("PlanModels.json");
+            if (!context.PlanModels.Any())
+            {
+                var planModels = new List<PlanModel>();
+                var jsonString = File.ReadAllText("PlanModels.json");
 
-            //    var result = JsonConvert.DeserializeObject<PlanModel[]>(jsonString);
+                var result = JsonConvert.DeserializeObject<PlanModel[]>(jsonString);
 
-            //    foreach (var stats in result)
-            //    {
-            //        planModels.Add(stats);
-            //    }
+                foreach (var stats in result)
+                {
+                    planModels.Add(stats);
+                }
 
-            //    context.AddRange(planModels);
-            //    context.SaveChanges();
-            //}
+                context.AddRange(planModels);
+                context.SaveChanges();
+            }
 
-            //if (!context.Ships.Any())
-            //{
-            //    var planModels = new List<Ship>();
-            //    var jsonString = File.ReadAllText("ships.json");
+            if (!context.Ships.Any())
+            {
+                var planModels = new List<Ship>();
+                var jsonString = File.ReadAllText("ships.json");
 
-            //    var result = JsonConvert.DeserializeObject<Ship[]>(jsonString);
+                var result = JsonConvert.DeserializeObject<Ship[]>(jsonString);
 
-            //    foreach (var ship in result)
-            //    {
-            //        planModels.Add(ship);
-            //    }
+                foreach (var ship in result)
+                {
+                    planModels.Add(ship);
+                }
 
-            //    context.AddRange(planModels);
-            //    context.SaveChanges();
-            //}
+                context.AddRange(planModels);
+                context.SaveChanges();
+            }
 
-            //foreach (var item in context.Players)
-            //{
-            //    item.PlanPlayers.Add(new PlanPlayer() { PlanId = 1 });
-            //}
+            foreach (var item in context.Players)
+            {
+                item.PlanPlayers.Add(new PlanPlayer() { PlanId = 1 });
+            }
 
-            //foreach (var item in context.Players)
-            //{
-            //    item.PlayerShips.Add(new PlayerShip() { ShipId = 1 });
-            //}
+            foreach (var item in context.Players)
+            {
+                item.PlayerShips.Add(new PlayerShip() { ShipId = 1 });
+            }
 
-            //context.SaveChanges();
+            context.SaveChanges();
 
-            //var nodes = new List<Node>();
-            //Node node;
-            //int x = 0;
-            //int y = 10;
+            var nodes = new List<Node>();
+            Node node;
+            int x = 0;
+            int y = 10;
 
-            //for (int i = 1001; i < 1016; i++)
-            //{
+            for (int i = 1001; i < 1016; i++)
+            {
 
-            //    node = new Node()
-            //    {
-            //        NodeId = i.ToString(),
-            //        CoordinatePixels = $"{x+=10}, {y+=10}"
-            //    };
+                node = new Node()
+                {
+                    NodeId = i.ToString(),
+                    CoordinatePixels = $"{x += 10}, {y += 10}"
+                };
 
-            //    nodes.Add(node);
+                nodes.Add(node);
 
-            //    //context.Update(node);
+                //context.Update(node);
 
-            //    //context.ChangeTracker.TrackGraph(node, e =>
-            //    //{
-            //    //    e.Entry.State = EntityState.Unchanged;
+                //context.ChangeTracker.TrackGraph(node, e =>
+                //{
+                //    e.Entry.State = EntityState.Unchanged;
 
-            //    //    if ((e.Entry.Entity as Player) != null)
-            //    //    {
-            //    //        if (e.Entry.IsKeySet)
-            //    //        {
-            //    //            e.Entry.State = EntityState.Modified;
-            //    //        }
-            //    //        else
-            //    //        {
-            //    //            e.Entry.State = EntityState.Added;
-            //    //        }
-            //    //    }
-            //    //});
-            //    //context.SaveChanges();
-            //}
+                //    if ((e.Entry.Entity as Player) != null)
+                //    {
+                //        if (e.Entry.IsKeySet)
+                //        {
+                //            e.Entry.State = EntityState.Modified;
+                //        }
+                //        else
+                //        {
+                //            e.Entry.State = EntityState.Added;
+                //        }
+                //    }
+                //});
+                //context.SaveChanges();
+            }
 
-            //context.AddRange(nodes);
-            //context.SaveChanges();
+            context.AddRange(nodes);
+            context.SaveChanges();
 
-            //var mapper = new List<Mapper>()
-            //{
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1001",
-            //        ToId = "1002",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1002",
-            //        ToId = "1003",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1003",
-            //        ToId = "1004",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1004",
-            //        ToId = "1005",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1005",
-            //        ToId = "1006",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1006",
-            //        ToId = "1007",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1007",
-            //        ToId = "1008",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1008",
-            //        ToId = "1009",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1009",
-            //        ToId = "1010",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1010",
-            //        ToId = "1011",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1011",
-            //        ToId = "1012",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1012",
-            //        ToId = "1013",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1013",
-            //        ToId = "1001",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1001",
-            //        ToId = "1014",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1014",
-            //        ToId = "1015",
-            //    },
-            //    new Mapper()
-            //    {
-                    
-            //        FromId = "1015",
-            //        ToId = "1008",
-            //    },
-            //};
+            var mapper = new List<Mapper>()
+            {
+                new Mapper()
+                {
 
-            //context.Mappers.AddRange(mapper);
-            //context.SaveChanges();
+                    FromId = "1001",
+                    ToId = "1002",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1002",
+                    ToId = "1003",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1003",
+                    ToId = "1004",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1004",
+                    ToId = "1005",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1005",
+                    ToId = "1006",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1006",
+                    ToId = "1007",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1007",
+                    ToId = "1008",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1008",
+                    ToId = "1009",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1009",
+                    ToId = "1010",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1010",
+                    ToId = "1011",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1011",
+                    ToId = "1012",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1012",
+                    ToId = "1013",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1013",
+                    ToId = "1001",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1001",
+                    ToId = "1014",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1014",
+                    ToId = "1015",
+                },
+                new Mapper()
+                {
+
+                    FromId = "1015",
+                    ToId = "1008",
+                },
+            };
+
+            context.Mappers.AddRange(mapper);
+            context.SaveChanges();
 
             //Get All user Ids
             var getUserIds = context.Users.Select(x => x.Id).ToList();
