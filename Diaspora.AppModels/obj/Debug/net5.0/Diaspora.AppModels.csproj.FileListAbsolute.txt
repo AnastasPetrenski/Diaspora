@@ -1,0 +1,12 @@
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\bin\Debug\net5.0\Diaspora.AppModels.deps.json
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\bin\Debug\net5.0\Diaspora.AppModels.dll
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\bin\Debug\net5.0\ref\Diaspora.AppModels.dll
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\bin\Debug\net5.0\Diaspora.AppModels.pdb
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\obj\Debug\net5.0\Diaspora.AppModels.csprojAssemblyReference.cache
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\obj\Debug\net5.0\Diaspora.AppModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\obj\Debug\net5.0\Diaspora.AppModels.AssemblyInfoInputs.cache
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\obj\Debug\net5.0\Diaspora.AppModels.AssemblyInfo.cs
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\obj\Debug\net5.0\Diaspora.AppModels.csproj.CoreCompileInputs.cache
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\obj\Debug\net5.0\Diaspora.AppModels.dll
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\obj\Debug\net5.0\ref\Diaspora.AppModels.dll
+C:\Users\anastas\source\repos\Diaspora\Diaspora.AppModels\obj\Debug\net5.0\Diaspora.AppModels.pdb

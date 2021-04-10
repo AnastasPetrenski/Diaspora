@@ -1,0 +1,59 @@
+[
+    {
+        "PlanId": "1",
+        "ModelId": "1",
+        "Hull": 100,
+        "Cargo": 10,
+        "GunSlots": 2,
+        "Speed": 25,
+        "PodSlots": 1,
+        "Evasion": 30,
+        "Sheald": 25,
+        "Range": 1,
+        "Price": 100,
+        "Damage": 0
+    },
+    {
+        "PlanId": "1",
+        "ModelId": "2",
+        "Hull": 150,
+        "Cargo": 20,
+        "GunSlots": 3,
+        "Speed": 20,
+        "PodSlots": 2,
+        "Evasion": 25,
+        "Sheald": 20,
+        "Range": 1,
+        "Price": 200,
+        "Damage": 0
+    },
+    {
+        "PlanId": "2",
+        "ModelId": "1",
+        "Hull": 130,
+        "Cargo": 15,
+        "GunSlots": 2,
+        "Speed": 30,
+        "PodSlots": 2,
+        "Evasion": 25,
+        "Sheald": 25,
+        "Range": 1,
+        "Price": 150,
+        "Damage": 0
+    },
+    {
+        "PlanId": "2",
+        "ModelId": "2",
+        "Hull": 200,
+        "Cargo": 30,
+        "GunSlots": 4,
+        "Speed": 20,
+        "PodSlots": 3,
+        "Evasion": 25,
+        "Sheald": 20,
+        "Range": 1,
+        "Price": 300,
+        "Damage": 0
+    }
+  
+]
