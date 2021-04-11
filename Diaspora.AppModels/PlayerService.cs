@@ -1,6 +1,7 @@
 ﻿using Diaspora.Data;
 using Diaspora.Models;
 using Diaspora.Services.Contracts;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Diaspora.Services
@@ -32,9 +33,34 @@ namespace Diaspora.Services
             return false;
         }
 
-        public Player GetPlayer(string id)
+        public ICollection<PlanModel> GetPlansModels(List<int> plansIds)
         {
-            return context.Players.FirstOrDefault(p => p.AplicationUserId == id);
+            var models = context.PlanModels.Where(x => plansIds.Contains(x.PlanId)).ToList();
+
+            return models;
+        }
+
+        public Player GetPlayer(string userId)
+        {
+            return context.Players.FirstOrDefault(p => p.AplicationUserId == userId);
+        }
+
+        public ICollection<Plan> GetPlayerPlans(string userId)
+        {
+            var player = this.GetPlayer(userId);
+
+            var plans = context.PlanPlayers.Where(x => x.PlayerId == player.Id).Select(x => x.Plan).ToList();
+
+            return plans;
+        }
+
+        public ICollection<Ship> GetPlayerShips(string userId)
+        {
+            var player = this.GetPlayer(userId);
+
+            var ships = context.PlayerShips.Where(x => x.PlayerId == player.Id).Select(x => x.Ship).ToList();
+
+            return ships;
         }
     }
 }

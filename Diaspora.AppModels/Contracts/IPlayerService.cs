@@ -1,4 +1,5 @@
 ﻿using Diaspora.Models;
+using System.Collections.Generic;
 
 namespace Diaspora.Services.Contracts
 {
@@ -8,6 +9,12 @@ namespace Diaspora.Services.Contracts
 
         void Add(Player player);
 
-        Player GetPlayer(string id);
+        Player GetPlayer(string userId);
+
+        ICollection<Ship> GetPlayerShips(string userId);
+
+        ICollection<Plan> GetPlayerPlans(string userId);
+
+        ICollection<PlanModel> GetPlansModels(List<int> plansIds);
     }
 }

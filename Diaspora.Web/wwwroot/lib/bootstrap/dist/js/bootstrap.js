@@ -4398,6 +4398,17 @@
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
+    var myCarousel = document.getElementById('myCarousel');
+    var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 2000,
+        wrap: false
+    });
+
+    myCarousel.addEventListener('slide.bs.carousel', function() {
+        
+    })
+
+
 
   (function () {
     if (typeof $ === 'undefined') {

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Diaspora.Web.Controllers
@@ -86,7 +87,39 @@ namespace Diaspora.Web.Controllers
             return this.View("Index", player);
         }
 
+        public IActionResult Hangar()
+        {
+            var userId = this._userManager.GetUserId(this.User);
+            //PlayerShips available
+            var playerShips = _playerServices.GetPlayerShips(userId);
+            //PlayerPlans
+            var playerPlans = _playerServices.GetPlayerPlans(userId);
+
+            var plansIds = playerPlans.Select(x => x.Id).ToList();
+            var planModels = _playerServices.GetPlansModels(plansIds);
+
+            HangarViewModel hangar = new HangarViewModel()
+            {
+                Ships = playerShips,
+                Plans = playerPlans,
+                PlanModels = planModels
+            };
+
+            return this.View(hangar);
+        }
+
         [HttpPost]
+        public IActionResult Hangar(HangarViewModel hangar)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+
+            return this.View();  
+        }
+
+            [HttpPost]
         public JsonResult IsAlreadySigned(string PlayerName)
         {
             return Json(_playerServices.CheckNameIsAvailable(PlayerName));

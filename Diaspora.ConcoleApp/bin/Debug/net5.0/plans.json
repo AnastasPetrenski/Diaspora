@@ -5,26 +5,26 @@
     },
     {
         "Name": "Arachne",
-        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Arachne.jpg"
+        "Image": "~/plans/Arachne.jpg"
     },
     {
         "Name": "Nisus",
-        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Nisus.jpg"
+        "Image": "~/plans/Nisus.jpg"
     },
     {
         "Name": "Helios",
-        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Helios.jpg"
+        "Image": "~/plans/Helios.jpg"
     },
     {
         "Name": "Talos",
-        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Talos.jpg"
+        "Image": "~/plans/Talos.jpg"
     },
     {
         "Name": "Nereid",
-        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Nereid.jpg"
+        "Image": "~/plans/Nereid.jpg"
     },
     {
         "Name": "Endymion",
-        "Image": "C:\\Users\\anastas\\source\\repos\\Diaspora\\Diaspora.ConcoleApp\\DataSets\\plans.Endymion.jpg"
+        "Image": "~/plans/Endymion.jpg"
     }
 ]
